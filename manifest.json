@@ -1,9 +1,9 @@
 {
-  "name": "CHANGE THIS : Extension boilerplate",
-  "version": "0.0.1",
+  "name": "Srsly?",
+  "version": "0.1",
   "manifest_version": 2,
-  "description": "This extension was created with the awesome extensionizr.com",
-  "homepage_url": "http://extensionizr.com",
+  "description": "Do you seriously want to spend time on social networks?",
+  "homepage_url": "https://github.com/aaleksandar/srsly",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -13,8 +13,18 @@
   "options_page": "src/options/index.html",
   "content_scripts": [
     {
-      "matches": ["https://www.google.com/"],
-      "js": ["src/inject/inject.js"]
+      "matches": [
+        "*://*.facebook.com/*",
+        "*://*.twitter.com/*",
+        "*://*.linkedin.com/*",
+        "*://*.pinterest.com/*",
+        "*://plus.google.com/*",
+        "*://*.tumblr.com/*",
+        "*://*.instagram.com/*",
+        "*://*.vk.com/*"
+      ],
+      "js": ["src/inject/inject.js"],
+      "run_at": "document_start"
     }
   ]
 }
